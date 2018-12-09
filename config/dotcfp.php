@@ -13,16 +13,16 @@ return [
     'timezone' => 'Europe/Istanbul',
 
     //Event start date (Y-m-d)
-    'start_date' => '2018-05-20',
+    'start_date' => '2019-05-04',
 
     //Event end date (Y-m-d)
-    'end_date' => '2018-05-20',
+    'end_date' => '2019-05-04',
 
     //Submit talk feature opened after the date below (Y-m-d)
-    'cfp_start_date' => '2017-11-20',
+    'cfp_start_date' => '2018-12-10',
 
     //Submit talk feature closed after the date below (Y-m-d)
-    'cfp_end_date' => '2018-01-31',
+    'cfp_end_date' => '2019-01-31',
 
     //Nearby airport of event location. Eg: Amsterdam -> AMS
     'airport_code' => 'IST',
@@ -36,6 +36,7 @@ return [
     ],
 
     'previous_years' => [
+        'http://2018.phpkonf.org',
         'http://2017.phpkonf.org',
         'http://2016.phpkonf.org',
         'http://2015.phpkonf.org',
