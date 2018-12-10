@@ -10,6 +10,8 @@
 
     <title>{{ config('dotcfp.event_name', 'dotCFP') }}: Call for Papers</title>
 
+    <link rel="shortcut icon" href="images/favicon.ico">
+
     <!-- Styles -->
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 </head>
