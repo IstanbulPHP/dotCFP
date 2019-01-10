@@ -41,5 +41,9 @@ return [
         'http://2016.phpkonf.org',
         'http://2015.phpkonf.org',
         'http://2014.phpkonf.org',
-    ]
+    ],
+    
+    'notifications' => [
+        'talk_submitted' => true,
+    ],
 ];

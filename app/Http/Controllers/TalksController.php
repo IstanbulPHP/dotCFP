@@ -3,14 +3,17 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\TalkRequest;
+use App\Notifications\NewTalkSubmitted;
 use App\Notifications\TalkApproved;
 use App\Talk;
+use App\User;
 use App\Vote;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Notification;
 
 class TalksController extends Controller
 {
@@ -68,9 +71,13 @@ class TalksController extends Controller
      */
     public function store(TalkRequest $request)
     {
-        auth()->user()->talks()->create($request->only([
+        $talk = auth()->user()->talks()->create($request->only([
             'title', 'description', 'additional_information', 'duration', 'slide', 'is_favorite'
         ]));
+        
+        if (config('dotcfp.notifications.talk_submitted')) {
+            Notification::send(User::committee()->get(), new NewTalkSubmitted($talk));
+        }
 
         flash()->success('You have successfully added your talk!');
 
