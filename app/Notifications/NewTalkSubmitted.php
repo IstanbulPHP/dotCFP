@@ -53,7 +53,7 @@ class NewTalkSubmitted extends Notification implements ShouldQueue
             ->line("A new talk has been submitted to $eventName.")
             ->line("Title: {$this->talk->title}")
             ->line("Description: {$this->talk->description}")
-            ->action('View', route('talks.show', $this->talk->id));
+            ->action('View', route('talks.show', $this->talk->slug));
     }
     
     /**
